@@ -2,16 +2,13 @@ import os
 import re
 import subprocess
 from pathlib import Path
-
 from setuptools import find_packages, setup
 
 version = "0.5.1a0"
 sha = 'Unknown'
 src_folder = 'doctr'
 package_index = 'python-doctr'
-
 cwd = Path(__file__).parent.absolute()
-
 if os.getenv('BUILD_VERSION'):
     version = os.getenv('BUILD_VERSION')
 elif sha != 'Unknown':
@@ -21,14 +18,10 @@ elif sha != 'Unknown':
         pass
     version += '+' + sha[:7]
 print(f"Building wheel {package_index}-{version}")
-
 with open(cwd.joinpath(src_folder, 'version.py'), 'w') as f:
     f.write(f"__version__ = '{version}'\n")
-
 with open('README.md', 'r') as f:
     readme = f.read()
-
-# Borrowed from https://github.com/huggingface/transformers/blob/master/setup.py
 _deps = [
     "importlib_metadata",
     "numpy>=1.16.0",
