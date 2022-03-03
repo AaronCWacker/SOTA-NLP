@@ -6,8 +6,10 @@ from setuptools import find_packages, setup
 
 version = "0.5.1a0"
 sha = 'Unknown'
-src_folder = 'doctr'
-package_index = 'python-doctr'
+
+src_folder = 'SOTA-NLP'
+package_index = 'python-SOTA-NLP'
+
 cwd = Path(__file__).parent.absolute()
 if os.getenv('BUILD_VERSION'):
     version = os.getenv('BUILD_VERSION')
@@ -39,7 +41,7 @@ _deps = [
     "tensorflow-cpu>=2.4.0",
     "torch>=1.8.0",
     "torchvision>=0.9.0",
-    "Pillow>=8.3.2",  # cf. https://github.com/advisories/GHSA-98vv-pw6r-q6q4
+    "Pillow>=8.3.2",  
     "tqdm>=4.30.0",
     "tensorflow-addons>=0.13.0",
     "rapidfuzz>=1.6.0",
@@ -70,7 +72,6 @@ deps = {b: a for a, b in (re.findall(r"^(([^!=<>]+)(?:[!=<>].*)?$)", x)[0] for x
 
 def deps_list(*pkgs):
     return [deps[pkg] for pkg in pkgs]
-
 
 install_requires = [
     deps["importlib_metadata"] + ";python_version<'3.8'",  # importlib_metadata for Python versions that don't have it
@@ -151,14 +152,14 @@ setup(
     # Metadata
     name=package_index,
     version=version,
-    author='Mindee',
-    author_email='contact@mindee.com',
-    maintainer='François-Guillaume Fernandez, Charles Gaillard',
-    description='Document Text Recognition (docTR): deep Learning for high-performance OCR on documents.',
+    author='SOTA-NLP',
+    author_email='AaronCWacker@gmail.com',
+    maintainer='Aaron Wacker',
+    description='State of the Art NLP',
     long_description=readme,
     long_description_content_type="text/markdown",
-    url='https://github.com/mindee/doctr',
-    download_url='https://github.com/mindee/doctr/tags',
+    url='https://github.com/AaronCWacker/SOTA-NLP',
+    download_url='https://github.com/AaronCWacker/SOTA-NLP/tags',
     license='Apache',
     classifiers=[
         'Development Status :: 4 - Beta',
