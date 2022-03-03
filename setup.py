@@ -4,7 +4,7 @@ import subprocess
 from pathlib import Path
 from setuptools import find_packages, setup
 
-version = "0.5.1a0"
+version = "1.1.1"
 sha = 'Unknown'
 
 src_folder = 'SOTA-NLP'
